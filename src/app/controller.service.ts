@@ -9,7 +9,7 @@ import { DataService } from './data.service';
 export class ControllerService {
 
   public userId = new Subject<string>()
-  public data: BehaviorSubject<any> = new BehaviorSubject<any>([]]);
+  public data: BehaviorSubject<any> = new BehaviorSubject<any>([]);
 
 
   constructor(public dataService: DataService) {
