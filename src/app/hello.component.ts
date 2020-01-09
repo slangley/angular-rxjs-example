@@ -33,6 +33,7 @@ export class HelloComponent {
   ngAfterViewInit() {
     console.log(this.user);
 
+    //Sets up the event from the user field
     this.userEvent = fromEvent<any>(this.user.nativeElement, "keyup").pipe(
       map(e => e.target.value),
       startWith("1"),
@@ -40,11 +41,7 @@ export class HelloComponent {
       distinctUntilChanged(),
     );
 
-    this.subscription = this.userEvent.subscribe(x => {
-      console.log(x);
-      this.value = x;
-    });
-
+    //Subscribes to the above event, and forwards the results to this.controller.userId Subject
     this.userEvent.subscribe(this.controller.userId);
   }
 
