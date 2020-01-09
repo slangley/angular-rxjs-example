@@ -10,13 +10,8 @@ import { DataService } from "./data.service";
 export class AppComponent {
   name = "Angular";
 
-  constructor(private dataService: DataService) {}
-
-  posts: [];
+  constructor( public controller: ControllerService) {}
 
   ngOnInit() {
-    this.dataService.getPosts().subscribe(data => {
-      this.posts = data;
-    });
   }
 }

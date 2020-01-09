@@ -8,7 +8,7 @@ export interface Post {
   id: number,
   title: string,
   body: string,
-  userid: number
+  userId: number
 }
 
 @Injectable({
@@ -21,7 +21,7 @@ export class DataService {
   getPosts(id: string | null): Observable<Post[]> {
     let url = 'https://jsonplaceholder.typicode.com/posts'
     if (id) {
-      url += `/${id}`;
+      url += `?userId=${id}`;
     }
     return this.httpClient.get<Post[]>(url);
   }

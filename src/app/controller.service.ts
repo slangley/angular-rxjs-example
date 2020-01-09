@@ -22,6 +22,4 @@ export class ControllerService {
     ).subscribe(this.data);
 
   }
-
-
 }

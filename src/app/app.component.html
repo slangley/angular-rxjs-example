@@ -1,5 +1,5 @@
 <hello name="{{ name }}"></hello>
 
 <ul>
-  <li *ngFor="let item of posts; index as i">{{item.title}}</li>
+  <li *ngFor="let item of controller.data | async; index as i">{{item.title}}</li>
 </ul>
