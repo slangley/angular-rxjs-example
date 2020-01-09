@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { ControllerService } from './controller.service';
 
 @Component({
   selector: 'hello',
@@ -7,4 +8,6 @@ import { Component, Input } from '@angular/core';
 })
 export class HelloComponent  {
   @Input() name: string;
+
+  constructor( public controller: ControllerService) {}
 }
