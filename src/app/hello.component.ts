@@ -22,7 +22,6 @@ import {
   ]
 })
 export class HelloComponent {
-  value: string;
   @Input() name: string;
 
   @ViewChild("user", { static: false }) user: ElementRef;
@@ -36,7 +35,7 @@ export class HelloComponent {
     //Sets up the event from the user field
     this.userEvent = fromEvent<any>(this.user.nativeElement, "keyup").pipe(
       map(e => e.target.value),
-      startWith("1"),
+      startWith(null),
       debounceTime(400),
       distinctUntilChanged(),
     );
